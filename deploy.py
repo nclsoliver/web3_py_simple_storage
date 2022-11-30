@@ -38,7 +38,7 @@ abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 # NEVER hard-code your private key on github
 # for connecting to goerli
 w3 = Web3(
-    Web3.HTTPProvider("https://goerli.infura.io/v3/cb6f2cbe0c894d83941e9c3d15c7993a")
+    Web3.HTTPProvider("https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161")
 )
 chain_id = 5
 my_address = "0xA4CBD541B429E2A7a053cA54F8bc969401cb5243"
@@ -73,7 +73,8 @@ print("Deployed!")
 # Working with the contract, you always need
 # Contract Adress
 # Contract ABI
-simple_storage = w3.eth.contract(address=tx_receipt.contractAddress, abi=abi)
+simple_storage = w3.eth.contract(address="address", abi=abi)
+# exemple->simple_storage = w3.eth.contract(address=tx_receipt.contractAddress, abi=abi)
 # Call -> Simulate making the call and getting a return value
 # Transact -> Actually make a state change
 
