@@ -38,7 +38,7 @@ abi = compiled_sol["contracts"]["SimpleStorage.sol"]["SimpleStorage"]["abi"]
 # NEVER hard-code your private key on github
 # for connecting to goerli
 w3 = Web3(
-    Web3.HTTPProvider("https://goerli.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161")
+    Web3.HTTPProvider("https://goerli.infura.io/v3/cb6f2cbe0c894d83941e9c3d15c7993a")
 )
 chain_id = 5
 my_address = "0xA4CBD541B429E2A7a053cA54F8bc969401cb5243"
@@ -57,7 +57,7 @@ nonce = w3.eth.getTransactionCount(my_address)
 transaction = SimpleStorage.constructor().buildTransaction(
     {
         "gasPrice": w3.eth.gas_price,
-        # "chainID": chain_id, #TypeError: Transaction must not include unrecognized fields: {'chainID'}
+        # "chainID": chain_id, TypeError: Transaction must not include unrecognized fields: {'chainID'}
         "from": my_address,
         "nonce": nonce,
     }
